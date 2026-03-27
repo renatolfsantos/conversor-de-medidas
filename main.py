@@ -26,7 +26,13 @@ class WelcomeWindow(Screen):
 class WindowManager(ScreenManager):
     pass
 
-kv = Builder.load_file("my.kv")
+kv_files = [
+    "welcome.kv",
+    "main.kv"
+]
+
+for kv in kv_files:
+    Builder.load_file(kv)
 
 
 sm = WindowManager()

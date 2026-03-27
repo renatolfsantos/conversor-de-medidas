@@ -2,6 +2,7 @@
 #:import Window kivy.core.window.Window
 
 <WelcomeWindow>:
+    name: "welcome"
     BoxLayout:
         orientation: "vertical"
         padding: Window.width * 0.15
@@ -52,6 +53,9 @@
                     Line:
                         width: 1.2
                         rounded_rectangle: (*self.pos, *self.size, 15)
+                on_release:
+                    root.manager.transition.direction = "left"
+                    root.manager.current = "main"
 
             Button:
                 text: "Massa"
@@ -73,6 +77,9 @@
                     Line:
                         width: 1.2
                         rounded_rectangle: (*self.pos, *self.size, 15)
+                on_release:
+                    root.manager.transition.direction = "left"
+                    root.manager.current = "main"
 
             Button:
                 text: "Temperatura"
@@ -94,6 +101,9 @@
                     Line:
                         width: 1.2
                         rounded_rectangle: (*self.pos, *self.size, 15)
+                on_release:
+                    root.manager.transition.direction = "left"
+                    root.manager.current = "main"
 
             Button:
                 text: "Volume"
@@ -115,30 +125,6 @@
                     Line:
                         width: 1.2
                         rounded_rectangle: (*self.pos, *self.size, 15)
-
-<MainWindow>:
-    BoxLayout:
-        orientation: "horizontal"
-
-        BoxLayout:
-            size_hint: 0.3, 1
-            canvas.before:
-                Color:
-                    rgba: 1, 0, 0, 1 
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
-
-            Label:
-                text: "Seção 1"
-
-        BoxLayout:
-            canvas.before:
-                Color:
-                    rgba: 0, 0, 1, 1 
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
-
-            Label:
-                text: "Seção 2"
+                on_release:
+                    root.manager.transition.direction = "left"
+                    root.manager.current = "main"
