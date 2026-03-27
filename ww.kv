@@ -1,9 +1,10 @@
+#:kivy 2.3.1
 #:import Window kivy.core.window.Window
 
 <WelcomeWindow>:
     BoxLayout:
         orientation: "vertical"
-        padding: Window.width * 0.08
+        padding: Window.width * 0.15
         spacing: Window.height * 0.02
 
         canvas.before:
@@ -15,13 +16,13 @@
 
         Label:
             text: "Conversor de Medidas"
-            font_size: Window.width * 0.06
+            font_size: (Window.width + Window.height) * 0.03
             bold: True
             color: 0.9, 0.9, 0.9, 1
 
         Label:
             text: "Escolha o tipo de conversão"
-            font_size: Window.width * 0.03
+            font_size: (Window.width + Window.height) * 0.015
             color: 0.5, 0.5, 0.5, 1
 
         GridLayout:
@@ -36,7 +37,7 @@
                 background_normal: ""
                 background_color: 0, 0, 0, 0
                 color: 0.2, 0.6, 0.86, 1
-                font_size: Window.width * 0.02
+                font_size: (Window.width + Window.height) * 0.013
 
                 canvas.before:
                     Color:
@@ -57,7 +58,7 @@
                 background_normal: ""
                 background_color: 0, 0, 0, 0
                 color: 0.2, 0.7, 0.4, 1
-                font_size: Window.width * 0.02
+                font_size: (Window.width + Window.height) * 0.013
 
                 canvas.before:
                     Color:
@@ -78,7 +79,7 @@
                 background_normal: ""
                 background_color: 0, 0, 0, 0
                 color: 0.9, 0.5, 0.2, 1
-                font_size: Window.width * 0.02
+                font_size: (Window.width + Window.height) * 0.013
 
                 canvas.before:
                     Color:
@@ -99,7 +100,7 @@
                 background_normal: ""
                 background_color: 0, 0, 0, 0
                 color: 0.6, 0.3, 0.8, 1
-                font_size: Window.width * 0.02
+                font_size: (Window.width + Window.height) * 0.013
 
                 canvas.before:
                     Color:
@@ -123,7 +124,7 @@
             size_hint: 0.3, 1
             canvas.before:
                 Color:
-                    rgba: 1, 0, 0, 1  # vermelho
+                    rgba: 1, 0, 0, 1 
                 Rectangle:
                     pos: self.pos
                     size: self.size
@@ -134,7 +135,7 @@
         BoxLayout:
             canvas.before:
                 Color:
-                    rgba: 0, 0, 1, 1  # azul
+                    rgba: 0, 0, 1, 1 
                 Rectangle:
                     pos: self.pos
                     size: self.size
