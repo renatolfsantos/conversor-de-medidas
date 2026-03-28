@@ -16,7 +16,7 @@
                 size: self.size
 
         Label:
-            text: "Conversor de Medidas"
+            text: "Bem vindo!"
             font_size: (Window.width + Window.height) * 0.03
             bold: True
             color: 0.9, 0.9, 0.9, 1
@@ -35,7 +35,6 @@
 
             Button:
                 text: "Comprimento"
-                background_normal: ""
                 background_color: 0, 0, 0, 0
                 color: 0.2, 0.6, 0.86, 1
                 font_size: (Window.width + Window.height) * 0.013
@@ -55,11 +54,11 @@
                         rounded_rectangle: (*self.pos, *self.size, 15)
                 on_release:
                     root.manager.transition.direction = "left"
+                    root.manager.get_screen("main").set_tipo("comprimento")
                     root.manager.current = "main"
 
             Button:
                 text: "Massa"
-                background_normal: ""
                 background_color: 0, 0, 0, 0
                 color: 0.2, 0.7, 0.4, 1
                 font_size: (Window.width + Window.height) * 0.013
@@ -79,11 +78,11 @@
                         rounded_rectangle: (*self.pos, *self.size, 15)
                 on_release:
                     root.manager.transition.direction = "left"
+                    root.manager.get_screen("main").set_tipo("massa")
                     root.manager.current = "main"
 
             Button:
                 text: "Temperatura"
-                background_normal: ""
                 background_color: 0, 0, 0, 0
                 color: 0.9, 0.5, 0.2, 1
                 font_size: (Window.width + Window.height) * 0.013
@@ -103,11 +102,11 @@
                         rounded_rectangle: (*self.pos, *self.size, 15)
                 on_release:
                     root.manager.transition.direction = "left"
+                    root.manager.get_screen("main").set_tipo("temperatura")
                     root.manager.current = "main"
 
             Button:
                 text: "Volume"
-                background_normal: ""
                 background_color: 0, 0, 0, 0
                 color: 0.6, 0.3, 0.8, 1
                 font_size: (Window.width + Window.height) * 0.013
@@ -127,4 +126,5 @@
                         rounded_rectangle: (*self.pos, *self.size, 15)
                 on_release:
                     root.manager.transition.direction = "left"
+                    root.manager.get_screen("main").set_tipo("volume")
                     root.manager.current = "main"

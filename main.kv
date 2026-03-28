@@ -1,29 +1,68 @@
 #:kivy 2.3.1
 
 <MainWindow>:
-    name: 'main'
+    name: "main"
+
     BoxLayout:
-        orientation: "horizontal"
+        orientation: "vertical"
+        padding: Window.width * 0.1
+        spacing: Window.height * 0.02
 
-        BoxLayout:
-            size_hint: 0.3, 1
-            canvas.before:
-                Color:
-                    rgba: 1, 0, 0, 1 
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
+        canvas.before:
+            Color:
+                rgba: 0.1, 0.1, 0.1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
 
-            Label:
-                text: "Seção 1"
+        Label:
+            id: titulo
+            text: "Conversão"
+            font_size: (Window.width + Window.height) * 0.03
+            bold: True
+            color: 0.9, 0.9, 0.9, 1
 
-        BoxLayout:
-            canvas.before:
-                Color:
-                    rgba: 0, 0, 1, 1 
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
+        TextInput:
+            id: input_valor
+            hint_text: "Digite o valor"
+            multiline: False
+            input_filter: "float"
+            background_normal: ""
+            background_color: 0.15, 0.15, 0.15, 1
+            foreground_color: 1,1,1,1
 
-            Label:
-                text: "Seção 2"
+        Spinner:
+            id: de_unidade
+            text: "De"
+            values: []
+            background_color: 0.2, 0.2, 0.2, 1
+
+        Spinner:
+            id: para_unidade
+            text: "Para"
+            values: []
+            background_color: 0.2, 0.2, 0.2, 1
+
+        Button:
+            text: "Converter"
+            size_hint_y: None
+            height: 50
+            background_normal: ""
+            background_color: 0.2, 0.6, 0.86, 1
+            on_release: root.converter()
+
+        Label:
+            id: resultado
+            text: "Resultado: "
+            font_size: (Window.width + Window.height) * 0.02
+            color: 0.7, 0.7, 0.7, 1
+
+        Button:
+            text: "Voltar"
+            size_hint_y: None
+            height: 40
+            background_normal: ""
+            background_color: 0.3, 0.3, 0.3, 1
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "welcome"
