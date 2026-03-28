@@ -33,14 +33,14 @@
 
         Spinner:
             id: de_unidade
+            values: root.unidades
             text: "De"
-            values: []
             background_color: 0.2, 0.2, 0.2, 1
 
         Spinner:
             id: para_unidade
+            values: root.unidades
             text: "Para"
-            values: []
             background_color: 0.2, 0.2, 0.2, 1
 
         Button:
@@ -48,7 +48,7 @@
             size_hint_y: None
             height: 50
             background_normal: ""
-            background_color: 0.2, 0.6, 0.86, 1
+            background_color: root.cor
             on_release: root.converter()
 
         Label:
